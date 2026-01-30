@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Space Grotesk", sans-serif;
+
+  --color-primary: #13ec5b;
+  --color-background-light: #f6f8f6;
+  --color-background-dark: #0a0a0c;
+  --color-deep-purple: #1a0b2e;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.infinite-garden-gradient {
+  background: radial-gradient(circle at top right, rgba(19, 236, 91, 0.1), transparent),
+    radial-gradient(circle at bottom left, rgba(26, 11, 46, 0.05), transparent);
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.garden-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+}
+
+/* Dark mode selection */
+.dark ::selection {
+  background-color: var(--color-primary);
+  color: black;
+}
+
+/* Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hide scrollbar but allow scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

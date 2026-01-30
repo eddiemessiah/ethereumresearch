@@ -1,118 +1,113 @@
+'use client';
 
 import React, { useState } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
 
 const RegistrationForm: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-  };
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 5000);
+    };
 
-  return (
-    <section id="register" className="py-24 bg-white relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 border border-slate-100 rounded-[3rem] overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 garden-gradient p-12 text-white flex flex-col justify-between">
-              <div>
-                <h2 className="text-4xl font-bold mb-6">Secure Your Spot</h2>
-                <p className="text-emerald-50 opacity-90 leading-relaxed">
-                  Join us in Lagos for 2 weeks of intensive research and ideation. Free entry; residency for remote participants has limited spots.
-                </p>
-              </div>
-              <div className="space-y-6 mt-12">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><CheckCircle size={20} /></div>
-                  <span className="font-medium">Free Access</span>
+    return (
+        <section className="py-24 px-6 relative overflow-hidden" id="register">
+            <div className="absolute inset-0 bg-[#13ec5b]/5 opacity-30"></div>
+
+            <div className="max-w-3xl mx-auto relative z-10">
+                <div className="bg-white border border-black/5 rounded-3xl p-8 md:p-12 shadow-2xl">
+                    <div className="text-center mb-10">
+                        <h2 className="text-4xl font-black text-slate-900 mb-4">Apply for Residency</h2>
+                        <p className="text-slate-600">Join a collective of pioneers in Lagos. Limited spots available for the 2025 cohort.</p>
+                    </div>
+
+                    {submitted ? (
+                        <div className="text-center py-12">
+                            <div className="w-20 h-20 bg-[#13ec5b]/20 text-[#13ec5b] rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span className="material-symbols-outlined text-4xl">check_circle</span>
+                            </div>
+                            <h3 className="text-2xl font-bold text-white mb-2">Application Received!</h3>
+                            <p className="text-slate-400">We&apos;ll review your application and get back to you shortly.</p>
+                        </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Full Name</label>
+                                    <input
+                                        className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
+                                        placeholder="Vitalik Buterin"
+                                        type="text"
+                                        required
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Email Address</label>
+                                    <input
+                                        className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
+                                        placeholder="hello@world.com"
+                                        type="email"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Primary Role</label>
+                                    <select className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all appearance-none">
+                                        <option className="bg-white">Protocol Researcher</option>
+                                        <option className="bg-white">Smart Contract Dev</option>
+                                        <option className="bg-white">Applied Cryptographer</option>
+                                        <option className="bg-white">Community Orchestrator</option>
+                                    </select>
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Participation</label>
+                                    <select className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all appearance-none">
+                                        <option className="bg-white">Full Residency (2 weeks)</option>
+                                        <option className="bg-white">Workshop Track (1 week)</option>
+                                        <option className="bg-white">Speaker / Mentor</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Github / Portfolio URL</label>
+                                <input
+                                    className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
+                                    placeholder="https://github.com/..."
+                                    type="url"
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">What are you looking to contribute?</label>
+                                <textarea
+                                    className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all resize-none placeholder:text-slate-400"
+                                    placeholder="Briefly describe your research interests or project ideas..."
+                                    rows={4}
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button
+                                className="w-full bg-[#13ec5b] text-[#0a0a0c] py-5 rounded-xl font-black text-lg hover:opacity-90 hover:scale-[1.01] transition-all mt-4"
+                                type="submit"
+                            >
+                                Submit Application
+                            </button>
+
+                            <p className="text-center text-[10px] text-slate-600 uppercase tracking-tighter">
+                                By submitting, you agree to the village code of conduct.
+                            </p>
+                        </form>
+                    )}
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><CheckCircle size={20} /></div>
-                  <span className="font-medium">Mentorship Included</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center"><CheckCircle size={20} /></div>
-                  <span className="font-medium">Hybrid Participation</span>
-                </div>
-              </div>
             </div>
-
-            <div className="md:col-span-3 p-12 bg-white">
-              {submitted ? (
-                <div className="h-full flex flex-col items-center justify-center text-center py-12">
-                  <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle size={40} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Application Received!</h3>
-                  <p className="text-slate-600">We'll review your application and get back to you shortly.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Full Name</label>
-                      <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" placeholder="John Doe" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Email</label>
-                      <input required type="email" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" placeholder="john@eth.com" />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Twitter / X</label>
-                      <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" placeholder="@handle" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Country</label>
-                      <input required type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" placeholder="Nigeria" />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Role</label>
-                      <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
-                        <option>Builder</option>
-                        <option>Researcher</option>
-                        <option>Student</option>
-                        <option>Other</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Participation</label>
-                      <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all">
-                        <option>In-Person</option>
-                        <option>Virtual</option>
-                        <option>Residency Interest</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Short Bio / Project Idea</label>
-                    <textarea required rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-emerald-500 outline-none transition-all" placeholder="Tell us what you're working on..."></textarea>
-                  </div>
-
-                  <button 
-                    type="submit"
-                    className="w-full py-5 bg-emerald-600 text-white rounded-xl font-bold text-lg hover:bg-emerald-700 transition-all flex items-center justify-center space-x-2"
-                  >
-                    <span>Register Now</span>
-                    <Send size={20} />
-                  </button>
-                  <p className="text-center text-xs text-slate-400">Limited residency spots available. Applicants will be vetted.</p>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default RegistrationForm;
