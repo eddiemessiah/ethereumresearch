@@ -156,15 +156,15 @@ const DetailedLabsSection: React.FC = () => {
     const currentLab = labsData.find(lab => lab.id === activeLab);
 
     return (
-        <section className="py-24 bg-slate-50" id="detailed-labs">
+        <section className="py-24 bg-slate-50 dark:bg-[#0a0a0c]" id="detailed-labs">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <span className="inline-block px-4 py-1 bg-[#13ec5b]/10 text-[#13ec5b] rounded-full text-sm font-bold mb-4">
                         Research Labs
                     </span>
-                    <h2 className="text-4xl font-black text-slate-900 mb-4">Deep Dive Research Tracks</h2>
-                    <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                    <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4">Deep Dive Research Tracks</h2>
+                    <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
                         Five specialized labs designed to push the boundaries of Ethereum research with hands-on projects and real-world applications for Africa.
                     </p>
                 </div>
@@ -176,8 +176,8 @@ const DetailedLabsSection: React.FC = () => {
                             key={lab.id}
                             onClick={() => setActiveLab(lab.id)}
                             className={`flex items-center gap-2 px-5 py-3 rounded-full font-bold transition-all ${activeLab === lab.id
-                                    ? 'bg-slate-900 text-white shadow-lg'
-                                    : 'bg-white text-slate-600 border border-black/10 hover:border-slate-300'
+                                ? 'bg-gradient-to-r from-emerald-700 to-emerald-600 text-white shadow-lg'
+                                : 'bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:border-slate-300 dark:hover:border-slate-500'
                                 }`}
                         >
                             <span className="material-symbols-outlined text-lg">{lab.icon}</span>
@@ -218,16 +218,16 @@ const DetailedLabsSection: React.FC = () => {
 
                         {/* Features (for Decentralized Luma) */}
                         {currentLab.features && (
-                            <div className="bg-white rounded-2xl border border-black/5 p-6 shadow-sm">
-                                <h4 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                            <div className="bg-white dark:bg-white/5 rounded-2xl border border-black/5 dark:border-white/10 p-6 shadow-sm">
+                                <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                                     <span className="material-symbols-outlined text-[#13ec5b]">featured_play_list</span>
                                     Platform Features
                                 </h4>
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {currentLab.features.map((feature, idx) => (
-                                        <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-slate-50">
+                                        <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-slate-50 dark:bg-white/5">
                                             <span className="material-symbols-outlined text-[#13ec5b] mt-0.5">check_circle</span>
-                                            <span className="text-slate-700">{feature}</span>
+                                            <span className="text-slate-700 dark:text-slate-300">{feature}</span>
                                         </div>
                                     ))}
                                 </div>
@@ -236,15 +236,15 @@ const DetailedLabsSection: React.FC = () => {
 
                         {/* Topics */}
                         <div className="space-y-6">
-                            <h4 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                            <h4 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                                 <span className="material-symbols-outlined text-[#13ec5b]">science</span>
                                 Research Topics & Activities
                             </h4>
 
                             {currentLab.topics.map((topic, idx) => (
-                                <div key={idx} className="bg-white rounded-2xl border border-black/5 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                                <div key={idx} className="bg-white dark:bg-white/5 rounded-2xl border border-black/5 dark:border-white/10 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                                     {/* Topic Header */}
-                                    <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-6 text-white">
+                                    <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 p-6 text-white">
                                         <div className="flex items-start justify-between gap-4">
                                             <div>
                                                 <span className="text-[#13ec5b] text-xs font-bold uppercase tracking-wider">Topic {idx + 1}</span>
@@ -260,8 +260,8 @@ const DetailedLabsSection: React.FC = () => {
                                     <div className="p-6 space-y-6">
                                         {/* The Concept */}
                                         <div>
-                                            <h6 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">The Concept</h6>
-                                            <p className="text-slate-700 leading-relaxed">{topic.concept}</p>
+                                            <h6 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">The Concept</h6>
+                                            <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{topic.concept}</p>
                                         </div>
 
                                         <div className="grid md:grid-cols-2 gap-6">
@@ -271,20 +271,20 @@ const DetailedLabsSection: React.FC = () => {
                                                     <span className="material-symbols-outlined text-lg">rocket_launch</span>
                                                     Engagement Activity
                                                 </h6>
-                                                <p className="text-slate-900 font-bold text-lg mb-2">"{topic.activity}"</p>
-                                                <p className="text-slate-600 text-sm">{topic.task}</p>
+                                                <p className="text-slate-900 dark:text-white font-bold text-lg mb-2">"{topic.activity}"</p>
+                                                <p className="text-slate-600 dark:text-slate-400 text-sm">{topic.task}</p>
                                             </div>
 
                                             {/* Research Question or Why Africa */}
                                             {(topic.researchQuestion || topic.whyAfrica) && (
-                                                <div className="p-4 rounded-xl bg-blue-50 border border-blue-100">
-                                                    <h6 className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                                <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800">
+                                                    <h6 className="text-sm font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2 flex items-center gap-2">
                                                         <span className="material-symbols-outlined text-lg">
                                                             {topic.researchQuestion ? 'psychology' : 'public'}
                                                         </span>
                                                         {topic.researchQuestion ? 'Research Question' : 'Why Africa?'}
                                                     </h6>
-                                                    <p className="text-slate-700">
+                                                    <p className="text-slate-700 dark:text-slate-300">
                                                         {topic.researchQuestion || topic.whyAfrica}
                                                     </p>
                                                 </div>
@@ -294,12 +294,12 @@ const DetailedLabsSection: React.FC = () => {
                                         {/* Tooling */}
                                         {topic.tooling && (
                                             <div>
-                                                <h6 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-3">Tooling & Stack</h6>
+                                                <h6 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">Tooling & Stack</h6>
                                                 <div className="flex flex-wrap gap-2">
                                                     {topic.tooling.map((tool, toolIdx) => (
                                                         <span
                                                             key={toolIdx}
-                                                            className="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium border border-slate-200"
+                                                            className="px-3 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-medium border border-slate-200 dark:border-slate-700"
                                                         >
                                                             {tool}
                                                         </span>

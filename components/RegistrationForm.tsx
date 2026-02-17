@@ -16,10 +16,10 @@ const RegistrationForm: React.FC = () => {
             <div className="absolute inset-0 bg-[#13ec5b]/5 opacity-30"></div>
 
             <div className="max-w-3xl mx-auto relative z-10">
-                <div className="bg-white border border-black/5 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div className="bg-white dark:bg-[#1a1a1a] border border-black/5 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
                     <div className="text-center mb-10">
-                        <h2 className="text-4xl font-black text-slate-900 mb-4">Apply for Residency</h2>
-                        <p className="text-slate-600">Join a collective of pioneers in Lagos. Limited spots available for the 2025 cohort.</p>
+                        <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-4">Apply for Residency</h2>
+                        <p className="text-slate-600 dark:text-slate-300">Join a collective of pioneers in Lagos. Limited spots available for the 2026 cohort.</p>
                     </div>
 
                     {submitted ? (
@@ -34,18 +34,18 @@ const RegistrationForm: React.FC = () => {
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Full Name</label>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Full Name</label>
                                     <input
-                                        className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
+                                        className="w-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-4 text-slate-900 dark:text-white focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
                                         placeholder="Vitalik Buterin"
                                         type="text"
                                         required
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Email Address</label>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Email Address</label>
                                     <input
-                                        className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
+                                        className="w-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-4 text-slate-900 dark:text-white focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
                                         placeholder="hello@world.com"
                                         type="email"
                                         required
@@ -55,37 +55,37 @@ const RegistrationForm: React.FC = () => {
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Primary Role</label>
-                                    <select className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all appearance-none">
-                                        <option className="bg-white">Protocol Researcher</option>
-                                        <option className="bg-white">Smart Contract Dev</option>
-                                        <option className="bg-white">Applied Cryptographer</option>
-                                        <option className="bg-white">Community Orchestrator</option>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Primary Role</label>
+                                    <select className="w-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-4 text-slate-900 dark:text-white focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all appearance-none">
+                                        <option className="bg-white dark:bg-[#1a1a1a]">Protocol Researcher</option>
+                                        <option className="bg-white dark:bg-[#1a1a1a]">Smart Contract Dev</option>
+                                        <option className="bg-white dark:bg-[#1a1a1a]">Applied Cryptographer</option>
+                                        <option className="bg-white dark:bg-[#1a1a1a]">Community Orchestrator</option>
                                     </select>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Participation</label>
-                                    <select className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all appearance-none">
-                                        <option className="bg-white">Full Residency (2 weeks)</option>
-                                        <option className="bg-white">Workshop Track (1 week)</option>
-                                        <option className="bg-white">Speaker / Mentor</option>
+                                    <label className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Participation</label>
+                                    <select className="w-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-4 text-slate-900 dark:text-white focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all appearance-none">
+                                        <option className="bg-white dark:bg-[#1a1a1a]">Full Residency (2 weeks)</option>
+                                        <option className="bg-white dark:bg-[#1a1a1a]">Workshop Track (1 week)</option>
+                                        <option className="bg-white dark:bg-[#1a1a1a]">Speaker / Mentor</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">Github / Portfolio URL</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">Github / Portfolio URL</label>
                                 <input
-                                    className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
+                                    className="w-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-4 text-slate-900 dark:text-white focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all placeholder:text-slate-400"
                                     placeholder="https://github.com/..."
                                     type="url"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 px-1">What are you looking to contribute?</label>
+                                <label className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 px-1">What are you looking to contribute?</label>
                                 <textarea
-                                    className="w-full bg-white border border-black/10 rounded-xl px-4 py-4 text-slate-900 focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all resize-none placeholder:text-slate-400"
+                                    className="w-full bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl px-4 py-4 text-slate-900 dark:text-white focus:ring-[#13ec5b] focus:border-[#13ec5b] transition-all resize-none placeholder:text-slate-400"
                                     placeholder="Briefly describe your research interests or project ideas..."
                                     rows={4}
                                     required

@@ -54,7 +54,7 @@ export const SPEAKERS: Speaker[] = [
 export const SCHEDULE: ScheduleDay[] = [
     {
         day: 1,
-        date: "Feb 16",
+        date: "Apr 13",
         theme: "The Infinite Garden Manifesto",
         morning: { time: "10:00 - 13:00", title: "Vision & Onboarding", description: "Program overview, Ethereum as an ecosystem, and community bonding." },
         afternoon: { time: "14:00 - 17:00", title: "The Roadmap", description: "Vitalik's Vision vs. African Reality. Deep dive into The Merge, Surge, and Scourge." },
@@ -63,7 +63,7 @@ export const SCHEDULE: ScheduleDay[] = [
     },
     {
         day: 2,
-        date: "Feb 17",
+        date: "Apr 14",
         theme: "The Surge – Rollups & Superchains",
         morning: { time: "10:00 - 13:00", title: "L2 Fundamentals", description: "Architecture of Optimism, Base, and Lisk." },
         afternoon: { time: "14:00 - 17:00", title: "EIP-4844 Deep Dive", description: "Researching Blobs economics for mobile money replacements." },
@@ -72,7 +72,7 @@ export const SCHEDULE: ScheduleDay[] = [
     },
     {
         day: 3,
-        date: "Feb 18",
+        date: "Apr 15",
         theme: "Core Research & ZK Proofs",
         morning: { time: "10:00 - 13:00", title: "Validity Proofs", description: "Math behind Starknet, Scroll, and zkSync." },
         afternoon: { time: "14:00 - 17:00", title: "Research Methods", description: "How to read EIPs and analyze on-chain data." },
@@ -81,7 +81,7 @@ export const SCHEDULE: ScheduleDay[] = [
     },
     {
         day: 4,
-        date: "Feb 19",
+        date: "Apr 16",
         theme: "Data Availability (DA)",
         morning: { time: "10:00 - 13:00", title: "Modular Stack", description: "Celestia, EigenDA, and the Modular vs Monolithic debate." },
         afternoon: { time: "14:00 - 17:00", title: "DA Workshop", description: "Building high-throughput apps using alternative DA layers." },
@@ -90,7 +90,7 @@ export const SCHEDULE: ScheduleDay[] = [
     },
     {
         day: 5,
-        date: "Feb 20",
+        date: "Apr 17",
         theme: "Account Abstraction & UX",
         morning: { time: "10:00 - 13:00", title: "EIP-4337 & EIP-7702", description: "Eliminating seed phrases and session keys." },
         afternoon: { time: "14:00 - 17:00", title: "UX Sprints", description: "Building gasless wallet prototypes for local merchants." },
@@ -99,7 +99,7 @@ export const SCHEDULE: ScheduleDay[] = [
     },
     {
         day: 14,
-        date: "Mar 1",
+        date: "Apr 28",
         theme: "The Harvest – Demo Day",
         morning: { time: "10:00 - 13:00", title: "Final Polishing", description: "Preparing the 'Ikorodu Consensus' research paper." },
         afternoon: { time: "14:00 - 17:00", title: "Demo Exhibition", description: "Presenting findings and artifacts to global partners." },

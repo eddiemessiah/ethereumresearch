@@ -36,7 +36,7 @@ export default function RootLayout({
         <link rel="icon" href="/ethereum-icon.svg" type="image/svg+xml" />
       </head>
       <body
-        className={`${spaceGrotesk.variable} font-sans bg-[#f6f8f6] dark:bg-[#0a0a0c] text-slate-900 dark:text-white selection:bg-[#13ec5b] selection:text-black antialiased`}
+        className={`${spaceGrotesk.variable} font-sans infinite-garden-gradient dark:bg-[#0a0a0c] text-slate-900 dark:text-white selection:bg-[#13ec5b] selection:text-black antialiased`}
       >
         {children}
       </body>

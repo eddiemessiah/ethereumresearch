@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     }, []);
 
     return (
-        <header className="fixed top-0 w-full z-50 border-b border-black/5 glass-nav">
+        <header className="fixed top-0 w-full z-50 border-b border-black/5 dark:border-white/10 glass-nav">
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3">
                     {/* Ethereum Diamond Logo */}
@@ -30,14 +30,14 @@ const Header: React.FC = () => {
                             <path fill="currentColor" opacity="0.6" d="M0 212.32l127.96 75.638v-133.8z" />
                         </svg>
                     </div>
-                    <h2 className="text-xl font-bold tracking-tight text-[#0a0a0c]">ETH Research Village</h2>
+                    <h2 className="text-xl font-bold tracking-tight text-[#0a0a0c] dark:text-white">ETH Research Village</h2>
                 </Link>
 
                 <nav className="hidden md:flex items-center gap-10">
-                    <Link href="/about" className="text-sm font-medium text-slate-700 hover:text-[#13ec5b] transition-colors">About</Link>
-                    <Link href="/schedule" className="text-sm font-medium text-slate-700 hover:text-[#13ec5b] transition-colors">Schedule</Link>
-                    <Link href="/labs" className="text-sm font-medium text-slate-700 hover:text-[#13ec5b] transition-colors">Labs</Link>
-                    <Link href="/speakers" className="text-sm font-medium text-slate-700 hover:text-[#13ec5b] transition-colors">Speakers</Link>
+                    <Link href="/about" className="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">About</Link>
+                    <Link href="/schedule" className="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">Schedule</Link>
+                    <Link href="/labs" className="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">Labs</Link>
+                    <Link href="/speakers" className="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">Speakers</Link>
                     <Link
                         href="/#register"
                         className="bg-[#13ec5b] text-[#0a0a0c] px-6 py-2.5 rounded-lg font-bold text-sm hover:opacity-90 transition-all"
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
                 {/* Mobile menu button */}
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="md:hidden text-slate-900 p-2"
+                    className="md:hidden text-slate-900 dark:text-white p-2"
                 >
                     {isMobileMenuOpen ? (
                         <span className="material-symbols-outlined">close</span>
@@ -61,12 +61,12 @@ const Header: React.FC = () => {
 
             {/* Mobile menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 right-0 bg-[#0a0a0c]/95 backdrop-blur-xl border-b border-white/10">
+                <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-[#0a0a0c]/95 backdrop-blur-xl border-b border-black/10 dark:border-white/10 shadow-lg">
                     <div className="px-6 py-8 space-y-6">
-                        <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-white hover:text-[#13ec5b] transition-colors">About</Link>
-                        <Link href="/schedule" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-white hover:text-[#13ec5b] transition-colors">Schedule</Link>
-                        <Link href="/labs" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-white hover:text-[#13ec5b] transition-colors">Labs</Link>
-                        <Link href="/speakers" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-white hover:text-[#13ec5b] transition-colors">Speakers</Link>
+                        <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-slate-800 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">About</Link>
+                        <Link href="/schedule" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-slate-800 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">Schedule</Link>
+                        <Link href="/labs" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-slate-800 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">Labs</Link>
+                        <Link href="/speakers" onClick={() => setIsMobileMenuOpen(false)} className="block text-lg font-medium text-slate-800 dark:text-slate-200 hover:text-[#13ec5b] transition-colors">Speakers</Link>
                         <Link
                             href="/#register"
                             onClick={() => setIsMobileMenuOpen(false)}

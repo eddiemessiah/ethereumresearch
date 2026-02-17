@@ -15,13 +15,43 @@ body {
 }
 
 .infinite-garden-gradient {
-  background: radial-gradient(circle at top right, rgba(19, 236, 91, 0.1), transparent),
-    radial-gradient(circle at bottom left, rgba(26, 11, 46, 0.05), transparent);
+  background:
+    linear-gradient(135deg, rgba(19, 236, 91, 0.12) 0%, rgba(16, 185, 129, 0.08) 45%, rgba(255, 255, 255, 0.9) 100%),
+    radial-gradient(circle at top right, rgba(19, 236, 91, 0.2), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(26, 11, 46, 0.08), transparent 60%);
+}
+
+.dark .infinite-garden-gradient {
+  background:
+    radial-gradient(circle at top right, rgba(19, 236, 91, 0.05), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(26, 11, 46, 0.2), transparent 60%);
+  background-color: #0a0a0c;
+}
+
+@media (prefers-color-scheme: dark) {
+  .infinite-garden-gradient {
+    background:
+      radial-gradient(circle at top right, rgba(19, 236, 91, 0.05), transparent 55%),
+      radial-gradient(circle at bottom left, rgba(26, 11, 46, 0.2), transparent 60%);
+    background-color: #0a0a0c;
+  }
 }
 
 .glass-nav {
   backdrop-filter: blur(12px);
   background: rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass-nav {
+  background: rgba(10, 10, 12, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .glass-nav {
+    background: rgba(10, 10, 12, 0.85);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 .garden-gradient {

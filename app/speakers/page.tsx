@@ -4,7 +4,7 @@ import SpeakersSection from '@/components/SpeakersSection';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: 'Speakers | ETH Research Village Lagos 2025',
+    title: 'Speakers | ETH Research Village Lagos 2026',
     description: 'Meet the mentors and researchers at the ETH Research Village Lagos.',
 };
 

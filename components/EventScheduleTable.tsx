@@ -424,16 +424,16 @@ const EventScheduleTable: React.FC = () => {
                 </div>
 
                 {/* Format Legend */}
-                <div className="bg-white rounded-2xl p-6 mb-8 border border-black/5 shadow-sm">
-                    <h3 className="text-lg font-bold text-slate-900 mb-4">Daily Format</h3>
+                <div className="bg-white dark:bg-white/5 rounded-2xl p-6 mb-8 border border-black/5 dark:border-white/10 shadow-sm">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">Daily Format</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="flex items-start gap-3">
                             <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
                                 <span className="text-blue-500 text-lg">📚</span>
                             </div>
                             <div>
-                                <p className="font-bold text-slate-900">Morning (10:00 - 13:00)</p>
-                                <p className="text-sm text-slate-600">Deep Research Seminars (Theory & EIPs)</p>
+                                <p className="font-bold text-slate-900 dark:text-white">Morning (10:00 - 13:00)</p>
+                                <p className="text-sm text-slate-600 dark:text-slate-300">Deep Research Seminars (Theory & EIPs)</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -441,8 +441,8 @@ const EventScheduleTable: React.FC = () => {
                                 <span className="text-[#13ec5b] text-lg">🔧</span>
                             </div>
                             <div>
-                                <p className="font-bold text-slate-900">Afternoon (14:00 - 17:00)</p>
-                                <p className="text-sm text-slate-600">Builder Sprints (Research Sessions & Prototyping)</p>
+                                <p className="font-bold text-slate-900 dark:text-white">Afternoon (14:00 - 17:00)</p>
+                                <p className="text-sm text-slate-600 dark:text-slate-300">Builder Sprints (Research Sessions & Prototyping)</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
@@ -450,8 +450,8 @@ const EventScheduleTable: React.FC = () => {
                                 <span className="text-purple-500 text-lg">🎭</span>
                             </div>
                             <div>
-                                <p className="font-bold text-slate-900">Evening (19:00+)</p>
-                                <p className="text-sm text-slate-600">Cultural Integration (Fireside Chats, Music, Local Food)</p>
+                                <p className="font-bold text-slate-900 dark:text-white">Evening (19:00+)</p>
+                                <p className="text-sm text-slate-600 dark:text-slate-300">Cultural Integration (Fireside Chats, Music, Local Food)</p>
                             </div>
                         </div>
                     </div>
@@ -464,8 +464,8 @@ const EventScheduleTable: React.FC = () => {
                             key={week.week}
                             onClick={() => setActiveWeek(week.week)}
                             className={`px-6 py-3 rounded-full font-bold transition-all ${activeWeek === week.week
-                                    ? 'bg-[#13ec5b] text-black shadow-lg'
-                                    : 'bg-white text-slate-600 border border-black/10 hover:border-[#13ec5b]/50'
+                                ? 'bg-[#13ec5b] text-black shadow-lg'
+                                : 'bg-white dark:bg-white/5 text-slate-600 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:border-[#13ec5b]/50'
                                 }`}
                         >
                             Week {week.week}: {week.title}
@@ -477,15 +477,15 @@ const EventScheduleTable: React.FC = () => {
                 {scheduleData.filter(w => w.week === activeWeek).map((week) => (
                     <div key={week.week} className="space-y-6">
                         <div className="bg-gradient-to-r from-[#13ec5b]/10 to-transparent rounded-2xl p-6 border border-[#13ec5b]/20">
-                            <h3 className="text-2xl font-black text-slate-900">Week {week.week}: {week.title}</h3>
-                            <p className="text-slate-600">Focus: {week.focus}</p>
+                            <h3 className="text-2xl font-black text-slate-900 dark:text-white">Week {week.week}: {week.title}</h3>
+                            <p className="text-slate-600 dark:text-slate-300">Focus: {week.focus}</p>
                         </div>
 
                         {/* Desktop Table */}
-                        <div className="hidden lg:block overflow-hidden rounded-2xl border border-black/5 shadow-sm">
+                        <div className="hidden lg:block overflow-hidden rounded-2xl border border-black/5 dark:border-white/10 shadow-sm">
                             <table className="w-full">
                                 <thead>
-                                    <tr className="bg-slate-900 text-white">
+                                    <tr className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-white">
                                         <th className="px-6 py-4 text-left font-bold">Day</th>
                                         <th className="px-6 py-4 text-left font-bold">Theme</th>
                                         <th className="px-6 py-4 text-left font-bold">Time</th>
@@ -500,27 +500,27 @@ const EventScheduleTable: React.FC = () => {
                                         day.activities.map((activity, actIdx) => (
                                             <tr
                                                 key={`${day.day}-${actIdx}`}
-                                                className={`${dayIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50'
-                                                    } hover:bg-[#13ec5b]/5 transition-colors border-b border-black/5`}
+                                                className={`${dayIdx % 2 === 0 ? 'bg-white dark:bg-white/5' : 'bg-slate-50 dark:bg-white/[0.02]'
+                                                    } hover:bg-[#13ec5b]/5 dark:hover:bg-[#13ec5b]/10 transition-colors border-b border-black/5 dark:border-white/5`}
                                             >
                                                 {actIdx === 0 && (
                                                     <>
-                                                        <td className="px-6 py-4 font-bold text-slate-900 align-top" rowSpan={day.activities.length}>
+                                                        <td className="px-6 py-4 font-bold text-slate-900 dark:text-white align-top" rowSpan={day.activities.length}>
                                                             <div className="flex items-center gap-2">
                                                                 <span className="w-8 h-8 rounded-full bg-[#13ec5b]/20 text-[#13ec5b] flex items-center justify-center font-bold text-sm">
                                                                     {day.day}
                                                                 </span>
-                                                                <span className="text-sm text-slate-500">{day.date}</span>
+                                                                <span className="text-sm text-slate-500 dark:text-slate-400">{day.date}</span>
                                                             </div>
                                                         </td>
-                                                        <td className="px-6 py-4 font-medium text-slate-700 align-top" rowSpan={day.activities.length}>
+                                                        <td className="px-6 py-4 font-medium text-slate-700 dark:text-slate-300 align-top" rowSpan={day.activities.length}>
                                                             {day.theme}
                                                         </td>
                                                     </>
                                                 )}
-                                                <td className="px-6 py-4 text-slate-600 text-sm whitespace-nowrap">{activity.time}</td>
-                                                <td className="px-6 py-4 font-semibold text-slate-900">{activity.title}</td>
-                                                <td className="px-6 py-4 text-slate-600 text-sm max-w-md">{activity.description}</td>
+                                                <td className="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm whitespace-nowrap">{activity.time}</td>
+                                                <td className="px-6 py-4 font-semibold text-slate-900 dark:text-white">{activity.title}</td>
+                                                <td className="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm max-w-md">{activity.description}</td>
                                                 <td className="px-6 py-4">{getActivityBadge(activity.type)}</td>
                                                 {actIdx === 0 && (
                                                     <td className="px-6 py-4 align-top" rowSpan={day.activities.length}>
@@ -540,8 +540,8 @@ const EventScheduleTable: React.FC = () => {
                         {/* Mobile Cards */}
                         <div className="lg:hidden space-y-4">
                             {week.days.map((day) => (
-                                <div key={day.day} className="bg-white rounded-2xl border border-black/5 shadow-sm overflow-hidden">
-                                    <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-4 text-white">
+                                <div key={day.day} className="bg-white dark:bg-white/5 rounded-2xl border border-black/5 dark:border-white/10 shadow-sm overflow-hidden">
+                                    <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 p-4 text-white">
                                         <div className="flex items-center justify-between">
                                             <div className="flex items-center gap-3">
                                                 <span className="w-10 h-10 rounded-full bg-[#13ec5b]/20 text-[#13ec5b] flex items-center justify-center font-bold">
@@ -549,7 +549,7 @@ const EventScheduleTable: React.FC = () => {
                                                 </span>
                                                 <div>
                                                     <p className="font-bold">{day.theme}</p>
-                                                    <p className="text-sm text-white/60">{day.date}</p>
+                                                    <p className="text-sm text-white/85">{day.date}</p>
                                                 </div>
                                             </div>
                                             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-medium">
@@ -558,15 +558,15 @@ const EventScheduleTable: React.FC = () => {
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="divide-y divide-black/5">
+                                    <div className="divide-y divide-black/5 dark:divide-white/10">
                                         {day.activities.map((activity, idx) => (
                                             <div key={idx} className="p-4">
                                                 <div className="flex items-center justify-between mb-2">
-                                                    <span className="text-sm font-medium text-slate-500">{activity.time}</span>
+                                                    <span className="text-sm font-medium text-slate-500 dark:text-slate-400">{activity.time}</span>
                                                     {getActivityBadge(activity.type)}
                                                 </div>
-                                                <h4 className="font-bold text-slate-900 mb-1">{activity.title}</h4>
-                                                <p className="text-sm text-slate-600">{activity.description}</p>
+                                                <h4 className="font-bold text-slate-900 dark:text-white mb-1">{activity.title}</h4>
+                                                <p className="text-sm text-slate-600 dark:text-slate-400">{activity.description}</p>
                                             </div>
                                         ))}
                                     </div>

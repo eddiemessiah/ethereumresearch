@@ -10,11 +10,11 @@ const AboutHero: React.FC = () => {
                     <span className="text-[#13ec5b] text-xs font-bold uppercase tracking-widest">About the Village</span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 mb-8">
+                <h1 className="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white mb-8">
                     A Sanctuary for <span className="text-[#13ec5b]">Ethereum Research</span>
                 </h1>
 
-                <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
                     ETH Research Village is Africa's first dedicated pop-up city for core protocol research.
                     We are building a bridge between global Ethereum innovation and local African talent.
                 </p>
